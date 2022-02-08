@@ -1,8 +1,1 @@
-module health-check
-
-go 1.15
-
-require (
-	github.com/gofiber/fiber/v2 v2.1.4
-	github.com/gofiber/template v1.6.4
-)
+bW9kdWxlIGhlYWx0aC1jaGVjawoKZ28gMS4xNQoKcmVxdWlyZSAoCglnaXRodWIuY29tL2dvZmliZXIvZmliZXIvdjIgdjIuMjYuMAoJZ2l0aHViLmNvbS9nb2ZpYmVyL3RlbXBsYXRlIHYxLjYuMjIKKQo=
