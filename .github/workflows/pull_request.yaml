@@ -15,4 +15,10 @@ jobs:
 
       - name: Run Checkov action
         id: checkov
+        continue-on-error: true
         uses: bridgecrewio/checkov-action@v12
+
+      - name: Print Result
+        run: |
+          echo "printing result"
+          echo ${{ steps.checkov.outputs.results }}
