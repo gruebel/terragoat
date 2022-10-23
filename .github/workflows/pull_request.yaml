@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: checkov-action
     steps:
-      - name: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Run Checkov action
         id: checkov
