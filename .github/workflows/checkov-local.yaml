@@ -21,6 +21,7 @@ jobs:
 
       - name: Run checkov
         id: checkov
+        continue-on-error: true
         run: |
           CHECKOV_RESULTS=$(checkov -d .)
           CHECKOV_RESULTS="${CHECKOV_RESULTS//$'\\n'/''}"
