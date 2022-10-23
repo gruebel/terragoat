@@ -26,7 +26,7 @@ jobs:
           CHECKOV_RESULTS=$(checkov -d . -s)
           CHECKOV_RESULTS="${CHECKOV_RESULTS//$'\\n'/''}"
 
-          { echo "CHECKOV_RESULTS<<EOF"; echo "results=$CHECKOV_RESULTS"; echo "EOF"; } >> $GITHUB_OUTPUT
+          { echo "results<<EOF"; echo "$CHECKOV_RESULTS"; echo "EOF"; } >> $GITHUB_OUTPUT
 
       - name: Print result
         run: |
