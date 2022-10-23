@@ -23,7 +23,7 @@ jobs:
         id: checkov
         continue-on-error: true
         run: |
-          CHECKOV_RESULTS=$(checkov -d .)
+          CHECKOV_RESULTS=$(checkov -d .) || True
           CHECKOV_RESULTS="${CHECKOV_RESULTS//$'\\n'/''}"
 
           { echo "CHECKOV_RESULTS<<EOF"; echo "results=$CHECKOV_RESULTS"; echo "EOF"; } >> $GITHUB_OUTPUT
