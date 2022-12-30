@@ -1,4 +1,4 @@
-name: build
+name: pr
 
 on:
   pull_request:
@@ -9,14 +9,17 @@ on:
 jobs:
   checkov-job:
     runs-on: ubuntu-latest
-    name: checkov-action
     steps:
       - uses: actions/checkout@v3
 
       - name: Run Checkov action
         id: checkov
         continue-on-error: true
-        uses: bridgecrewio/checkov-action@v12
+        uses: bridgecrewio/checkov-action@master
+        with:
+          api-key: ${{ secrets.BC_API_KEY }}
+        env:
+          BC_API_URL: ${{ secrets.BC_API_URL }}
 
       - name: Print Result
         run: |
