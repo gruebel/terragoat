@@ -1,6 +1,8 @@
 name: pr
 
 on:
+  pull_request:
+    branches: [ "main", "master" ]
   workflow_dispatch:
 
 jobs:
@@ -15,6 +17,11 @@ jobs:
         uses: bridgecrewio/checkov-action@master
         with:
           api-key: ${{ secrets.BC_API_KEY }}
+          directory: terraform
+          check: HIGH
+          output_format: cli,sarif
+          output_file_path: console,results.sarif
+          log_level: INFO
         env:
           BC_API_URL: ${{ secrets.BC_API_URL }}
 
