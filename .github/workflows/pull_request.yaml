@@ -19,13 +19,13 @@ jobs:
           api-key: ${{ secrets.BC_API_KEY }}
           directory: terraform
           check: HIGH
-          output_format: cli,sarif
-          output_file_path: console,results.sarif
           log_level: INFO
+          container_user: 1000
         env:
           BC_API_URL: ${{ secrets.BC_API_URL }}
 
       - name: Print Result
         run: |
+          ls -la
           echo "printing result"
           echo ${{ steps.checkov.outputs.results }}
